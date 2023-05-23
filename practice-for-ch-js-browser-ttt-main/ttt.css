@@ -32,3 +32,7 @@ ul {
     display: flex;
     justify-content: center;
 }
+
+messageBox {
+    font-size: 40px;
+}

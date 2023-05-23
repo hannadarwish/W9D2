@@ -3,7 +3,7 @@ class View {
     this.game = game;
     this.containerEl = containerEl;
     this.setupBoard();
-    containerEl.addEventListener("click", (this.handleClick));
+    containerEl.addEventListener("click", (this.handleClick.bind(this)));
   }
 
   setupBoard() {
@@ -12,8 +12,8 @@ class View {
       for (let col = 0; col < 3; col ++) {
         let ele = document.createElement("li");
         grid.appendChild(ele);
-        const pos = [row, col];
-        ele.setAttribute("data-pos", pos);
+        // const pos = [row, col];
+        ele.setAttribute("data-pos", `[${row},${col}]`);
       }
     }
     this.containerEl.appendChild(grid);
@@ -24,17 +24,27 @@ class View {
     // let square = e.target;
     let pos = e.target.getAttribute("data-pos");
     console.log(pos)
+    // pos = pos.split(",").map((el) => parseInt(el))
+    pos = JSON.parse(pos)
     this.game.playMove(pos);
     const mark = this.game.currentPlayer;
+    // let markText = document.createElement("p");
+    // markText.classList.add("marks");
     e.target.innerText = mark;
+    this.handleGameOver();
   }
 
-  makeMove(square) {
+  // makeMove(square) {
+  //   this.game.playMove(pos)
 
-  }
+  // }
 
   handleGameOver() {
-
+    if (this.game.isOver() === true) {
+      let messageBox = document.createElement("h2");
+      let text = `Congratulations ${this.game.currentPlayer}`;
+      messageBox.appendChild(text);
+    }
   }
 }
 
