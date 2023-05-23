@@ -1,0 +1,24 @@
+{
+  "name": "w9d2",
+  "version": "1.0.0",
+  "description": "browser tic tac toe",
+  "private": true,
+  "scripts": {
+    "start": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannadarwish/W9D2.git"
+  },
+  "keywords": [],
+  "author": "hanna and rocco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannadarwish/W9D2/issues"
+  },
+  "homepage": "https://github.com/hannadarwish/W9D2#readme",
+  "devDependencies": {
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
