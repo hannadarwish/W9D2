@@ -12,6 +12,8 @@ li {
     border-color: black;
     list-style: none;
     background-color: lightgray;
+    font-size: 80px;
+    text-align: center;
 }
 
 li:hover {
@@ -33,6 +35,9 @@ ul {
     justify-content: center;
 }
 
-messageBox {
-    font-size: 40px;
+h2 {
+    display: flex;
+    font-size: 75px;
+    justify-content: center;
+    color: green;
 }

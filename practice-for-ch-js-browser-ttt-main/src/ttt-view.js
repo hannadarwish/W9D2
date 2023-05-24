@@ -23,7 +23,6 @@ class View {
     // click event handler that we pass to the event listener
     // let square = e.target;
     let pos = e.target.getAttribute("data-pos");
-    console.log(pos)
     // pos = pos.split(",").map((el) => parseInt(el))
     pos = JSON.parse(pos)
     this.game.playMove(pos);
@@ -41,9 +40,12 @@ class View {
 
   handleGameOver() {
     if (this.game.isOver() === true) {
+
       let messageBox = document.createElement("h2");
-      let text = `Congratulations ${this.game.currentPlayer}`;
-      messageBox.appendChild(text);
+
+      let text = `Congratulations ${this.game.currentPlayer} !!!`;
+      const message = document.querySelector('h2');
+      message.innerText = text
     }
   }
 }
